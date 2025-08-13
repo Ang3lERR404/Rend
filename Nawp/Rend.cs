@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using Rend.Classes;
 
 // ReSharper disable InvertIf
 
@@ -13,7 +14,7 @@ namespace Rend;
 public class Rend {
   const string GUID = "ang3l404";
   const string Name = "Rend";
-  const string VERSION = "1.0.0";
+  const string VERSION = "1.1.0";
   internal static ManualLogSource Log;
   readonly Harmony h = new(GUID);
 
@@ -23,16 +24,16 @@ public class Rend {
     h.PatchAll();
   }
 
-  // [HarmonyPatch(typeof(Upgrades), "Awake")]
-  // class UpgradesAwakePatch {
-  //   [HarmonyPostfix]
-  //   public static void Postfix(Upgrades inst) {
-  //     Log.LogInfo("Upgrades.Awake() Completed, Running postfix.");
-  //     if (inst == null) {
-  //       Log.LogError("The instance was null");
-  //       return;
-  //     }
-  //   }
-  // }
+  [HarmonyPatch(typeof(Upgrades), "Awake")]
+  class UpgradesAwakePatch {
+    [HarmonyPostfix]
+    public static void Postfix(Upgrades inst) {
+      Log.LogInfo("Upgrades.Awake() Completed, Running postfix.");
+      if (inst == null) {
+        Log.LogError("The instance was null");
+        return;
+      }
+    }
+  }
   
 }

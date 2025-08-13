@@ -52,6 +52,12 @@
       <Reference Include="UnityEngine.CoreModule">
         <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\MoteMancer\MoteMancer_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       </Reference>
+      <Reference Include="UnityEngine.TilemapModule">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\MoteMancer\MoteMancer_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.VFXModule">
+        <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\MoteMancer\MoteMancer_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>
